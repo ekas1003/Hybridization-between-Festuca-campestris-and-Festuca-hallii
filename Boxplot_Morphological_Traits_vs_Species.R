@@ -7,7 +7,7 @@ library(patchwork)
 file_path <- "~/Desktop/biol4000 data.xlsx"
 
 raw <- read_excel(file_path, sheet = "Sheet1")
-raw <- raw[-1, ]   # drop the blank row sitting directly under the header
+raw <- raw[-1, ]   
 
 df <- raw %>%
   dplyr::select(

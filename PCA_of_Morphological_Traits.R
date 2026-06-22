@@ -21,9 +21,7 @@ traits <- df %>%
   filter(species %in% c("FH", "HY", "FC"))   # drop blank/"NA" rows
 
 # 3. Mean-impute missing trait values 
-# Several specimens are missing culm-height / culm-count measurements.
-# We fill these with the column mean so every labelled specimen can be
-# plotted (this is what reproduces the full point count in the figure).
+
 trait_mat <- as.matrix(traits[, -1])
 for (j in seq_len(ncol(trait_mat))) {
   trait_mat[is.na(trait_mat[, j]), j] <- mean(trait_mat[, j], na.rm = TRUE)
@@ -50,7 +48,7 @@ loadings$yend <- loadings$PC2 * arrow_scale
 loadings$xlab <- loadings$xend * 1.18
 loadings$ylab <- loadings$yend * 1.18
 
-# nudge a couple of labels that sit too close to each other / their arrow
+
 nudge <- list(
   `Panicle length`      = c(dx = 0.05, dy = 0.35),
   `Lower branch length` = c(dx = 0.15, dy = -0.35)

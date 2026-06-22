@@ -1,7 +1,7 @@
 library(readxl)
 library(dplyr)
 library(ggplot2)
-library(patchwork)
+library(patchwork) 
 
 # 1. Load data
 file_path <- "~/Desktop/biol4000 data.xlsx"
